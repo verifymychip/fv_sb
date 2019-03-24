@@ -74,7 +74,7 @@ chk_data_causality_ast:
 chk_data_forward_progress_ast:
                 assert property (@(posedge clk) disable iff (!rstn)
                   special_data_seen_at_input
-                  |-> s_eventually (pop_valid && (pop_data == special_data));
+                  |-> s_eventually (pop_valid && (pop_data == special_data)));
 
 chk_data_no_duplication_ast:
                 assert property (@(posedge clk) disable iff (!rstn)
