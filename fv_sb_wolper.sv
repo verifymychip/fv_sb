@@ -59,7 +59,7 @@ always_ff @(posedge clk or negedge rstn) begin
   if (!rstn) begin
     special_data_seen_at_output <= 1'b0;
   end else begin
-    if (push_valid && (pop_data == special_data)) begin
+    if (pop_valid && (pop_data == special_data)) begin
       special_data_seen_at_output <= 1'b1;
     end
   end
