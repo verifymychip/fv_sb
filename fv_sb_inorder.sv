@@ -59,7 +59,7 @@ always @(posedge clk or negedge rstn) begin
   end else begin
     cntr <= cntr_next;
     sampled_in <= sample_now && push_valid ? 1'b1 : sampled_in;
-    tracked_data <= sample_now && cntr_incr ? push_data : junk_data;
+    tracked_data <= sample_now && cntr_incr ? push_data : tracked_data;
     sampled_out <= compare_now ? 1'b1 : sampled_out;
   end
 end
